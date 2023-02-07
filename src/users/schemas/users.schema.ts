@@ -9,7 +9,7 @@ export type UserDocument = User & Document
 export class User { 
     @Length(3,30,{message: "length must be between 3 and 30 charachters"})
     @IsString({message: "must be a string"})
-    @ApiProperty({example: "benji", description: "username"})
+    @ApiProperty({example: "manager", description: "username"})
     @Prop({required:true, unique:true})
     username: string;
 
