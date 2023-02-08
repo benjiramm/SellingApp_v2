@@ -16,7 +16,27 @@ export class StaffService {
         return await new this.model(newStaff).save()
     }
 
+    async getAllStaff(): Promise<Array<Staff>> {
+        return await this.model.find().exec()
+    }
+
+    async findStaffById(_id: string): Promise<Staff> {
+        const staff = await this.model.findOne({_id}).exec()
+        if(!staff) {
+            throw new BadRequestException({message: "This staff doesn't exist"})
+        }
+        return staff
+    }
+
     async findStaffByName(name: string): Promise<Staff>{
         return await this.model.findOne({name}).exec()
+    }
+
+    async editStaff(_id: string, updatedStaff: Staff) {
+        return await this.model.findByIdAndUpdate(_id, updatedStaff, {new: true})
+    }
+
+    async deleteStaff(_id: string) {
+        return await this.model.findByIdAndDelete(_id)
     }
 }
