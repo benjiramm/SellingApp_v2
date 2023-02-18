@@ -5,7 +5,7 @@ import { StaffController } from './staff.controller';
 import { StaffService } from './staff.service';
 
 @Module({
-  imports: [MongooseModule.forFeature([{name: Staff.name, schema: StaffSchema}])] ,
+  imports: [MongooseModule.forFeature([{name: Staff.name, schema: StaffSchema}])],
   controllers: [StaffController],
   providers: [StaffService]
 })

@@ -9,7 +9,7 @@ export type StaffDocument = Staff & Document
 export class Staff {
     @Prop({required: true, unique:true})
     @Length(2, 20, {message: "name should range from 2 to 20 charachters"})
-    @IsString({message: "should be string"})
+    @IsString({message: "must be string"})
     @ApiProperty({example: "Rut", description: "name of staff member"})
     name: string;
 

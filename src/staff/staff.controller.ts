@@ -11,7 +11,7 @@ export class StaffController {
     @Post()
     @ApiOperation({summary: "Add a new staff member"})
     @ApiResponse({status: 201, type:Staff})
-    addUser(@Body() newStaff:Staff){
+    addStaff(@Body() newStaff:Staff){
         return this.staffService.addStaff(newStaff)
     }
 

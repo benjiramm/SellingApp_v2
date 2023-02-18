@@ -1,5 +1,5 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiHeaders, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { User } from './schemas/users.schema';
 import { UsersService } from './users.service';
 

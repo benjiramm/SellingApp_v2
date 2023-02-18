@@ -32,7 +32,7 @@ export class StaffService {
         return await this.model.findOne({name}).exec()
     }
 
-    async editStaff(_id: string, updatedStaff: Staff) {
+    async editStaff(_id: string, updatedStaff: Staff): Promise<Staff> {
         return await this.model.findByIdAndUpdate(_id, updatedStaff, {new: true})
     }
 
