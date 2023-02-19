@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Item, ItemDocument } from './schemas/items.shema';
+import { Item, ItemDocument } from './schemas/item.shema';
 
 @Injectable()
 export class ItemsService {
@@ -37,7 +37,7 @@ export class ItemsService {
         return await this.model.findByIdAndUpdate(_id,updatedItem,{new: true})
     }
 
-    async deleteItem(_id: string){
+    async deleteItem(_id: string) {
         return await this.model.findByIdAndDelete(_id)
     }
 }
