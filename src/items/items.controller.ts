@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { ItemsService } from './items.service';
-import { Item } from './schemas/items.shema';
+import { Item } from './schemas/item.shema';
 
 @Controller('items')
 export class ItemsController {

@@ -19,4 +19,8 @@ export class UsersService {
     async getUserByUsername( username: string): Promise<User>{
         return await this.model.findOne({username}).exec()
     }
+
+    async getAllUsers() : Promise<Array<User>> {
+        return await this.model.find().exec()
+    }
 }
