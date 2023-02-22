@@ -10,7 +10,7 @@ async function bootstrap() {
     .setTitle('Sales App API')
     .setDescription('the backend of the Sales App')
     .setVersion('1.0')
-    .addTag('salesapi')
+    .addTag('Sales App v2 routes')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
