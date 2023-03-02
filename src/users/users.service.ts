@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Body, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User, UserDocument } from './schemas/users.schema';
@@ -7,7 +7,7 @@ import { User, UserDocument } from './schemas/users.schema';
 export class UsersService {
     constructor(@InjectModel(User.name) private readonly model: Model<UserDocument>){}
 
-    async addUser(newUser: User){
+    async addUser(@Body() newUser: User){
         const user = await this.getUserByUsername(newUser.username)
         if(user) {
             throw new BadRequestException({message: "This user already exists"})
