@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { StaffModule } from './staff/staff.module';
 import { ItemsModule } from './items/items.module';
 import { LogModule } from './logs/log.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { LogModule } from './logs/log.module';
     UsersModule,
     StaffModule,
     ItemsModule,
-    LogModule
+    LogModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
